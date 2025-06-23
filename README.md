@@ -15,9 +15,6 @@ El objetivo del proyecto es crear un entorno inmersivo de control remoto para el
 
 ---
 
-## 📁 Estructura del repositorio
-<pre> ## 📁 Estructura del repositorio ``` TFG-UnitreeGO2/ ├── realsense/ │ ├── raw/ # Scripts para capturar y procesar imágenes (OpenCV, filtros) │ └── ros/ # Nodos ROS 2 que publican imágenes estéreo y compresión │ ├── unity-vr/ # Proyecto Unity para VR y comunicación con ROS (subido por Plastic SCM) │ ├── scripts_utils/ # Scripts auxiliares y pruebas de visualización │ ├── doc/ # Documentación, diseño de arquitectura y esquemas │ ├── .gitignore └── README.md ``` </pre>
-
 ## 🛠️ Tecnologías utilizadas
 
 - 🐧 **Ubuntu 22.04 + ROS 2 Humble**
@@ -48,7 +45,9 @@ Conectado a ROS 2 Humble mediante ROSConnection.
 
 Publica comandos básicos de control.
 
-🙋 Autor
+---
+
+## 🙋 Autor
 Alejandro Gea
 Estudiante de Ingeniería Robótica
 Universidad de Alicante
