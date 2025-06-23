@@ -28,7 +28,7 @@ El objetivo del proyecto es crear un entorno inmersivo de control remoto para el
 
 ## 🚀 Cómo ejecutar
 
-### 1. Nodos ROS 2 en el robot:
+### 1. Nodos de visión en el robot:
 ros2 run virtual_stereo_cam stereo_disparity_publisher
 
 ### 2. Nodo de compresión en PC:
@@ -48,6 +48,8 @@ Publica comandos básicos de control.
 ---
 
 ## 🙋 Autor
-Alejandro Gea
-Estudiante de Ingeniería Robótica
-Universidad de Alicante
+**Alejandro Gea Belda**
+
+Estudiante del **Grado en Ingeniería Robótica**
+
+**Universidad de Alicante**
