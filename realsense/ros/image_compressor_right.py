@@ -33,7 +33,8 @@ class ImageCompressorNode(Node):
             cv_image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
             # Codificar como JPEG
-            success, encoded_image = cv2.imencode('.jpg', cv_image)
+            encode_params = [int(cv2.IMWRITE_JPEG_QUALITY), 75]  # Puedes probar con 70 también
+            success, encoded_image = cv2.imencode('.jpg', cv_image, encode_params)
 
             if not success:
                 self.get_logger().warn("No se pudo codificar la imagen.")
