@@ -17,11 +17,11 @@ class StereoDisparityPublisher(Node):
         self.pub_right = self.create_publisher(Image, '/stereo_virtual/right/image_raw', 10)
 
         # Parámetros de cámara
-        self.baseline = 0.065  # 6.5 cm
+        self.baseline = 0.065           # 6.5 cm
         self.focal_length_px = 600.0
         self.image_width = 640
         self.image_height = 480
-        self.fps = 15
+        self.fps = 15                   # Publicar a máx 15 Hz
 
         # Inicializar RealSense
         self.pipeline = rs.pipeline()
@@ -83,7 +83,7 @@ class StereoDisparityPublisher(Node):
             self.pub_right.publish(msg_right)
 
             self.get_logger().debug("Imágenes publicadas")
-            time.sleep(1 / self.fps)  # Limitar a fps deseado
+            time.sleep(1 / self.fps)
 
 def main(args=None):
     rclpy.init(args=args)

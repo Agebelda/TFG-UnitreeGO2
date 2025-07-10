@@ -34,7 +34,7 @@ class CmdVelToRequestBridge(Node):
         request_msg.header.identity.api_id = 1008
 
         self.publisher_.publish(request_msg)
-        self.get_logger().info(f'Publicado: x={x}, y={y}, z={z}')
+        # self.get_logger().info(f'Publicado: x={x}, y={y}, z={z}')
 
 def main(args=None):
     rclpy.init(args=args)
