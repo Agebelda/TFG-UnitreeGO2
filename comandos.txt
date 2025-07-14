@@ -1,4 +1,4 @@
----------- Conectarse al Robot ----------
+---------- SDK no Oficial ----------
 source install/setup.bash
 export ROBOT_IP="192.168.12.1"
 export CONN_TYPE="webrtc"
@@ -10,17 +10,9 @@ ros2 launch realsense2_camera rs_launch.py
 ---- Ejecutar Aplicación de la Cámara ----
 realsense-viewer
 
-------- Ver Imagenes de la Camara --------
-ros2 run rqt_image_view rqt_image_view
-
----- Contraseña wifi perro: 88888888 -----
-
 --- Contraseña wifi GL-AXT: KZPF52C4MW ---
 
 --------------------- SSH al Robot ----------------------
-ssh unitree@10.42.0.1 -> Antes
-contraseña 123
-ros foxy -> 1
 
 ssh unitree@192.168.123.18
 contraseña 123
@@ -31,34 +23,12 @@ Conectar hdmi, teclado, ratón y ethernet al adaptador que va detras del perro e
 
 Para el ethernet hay que cambiar el perfil al que tenga internet
 
---------------- Activar entorno de conda ----------------
-source ~/miniconda3/etc/profile.d/conda.sh
-conda activate robot_env
 
-------------- Activar la Ip de mi ordenador -------------
-unitree@ubuntu:~/cyclonedds_ws$ nano cyclonedds.xml 
-Una vez en nano descomentar mi linea de la ip y comentar la que este: <Peer Address="10.42.0.196">
-(Ya no hace falta)
-
------- Copiar archivos desde mi ordenador al robot ------
-Conectado al wifi del robot (HotSpotSSID) y desde la terminal: 
-scp /home/agebelda/ros2_ws/src/virtual_stereo_cam/virtual_stereo_cam/stereo_disparity_publisher.py unitree@192.168.123.18:/home/unitree/ros2_ws_cyclon/src/go2_robot_sdk/go2_robot_sdk/stereo_disparity_publisher.py
-
---------------------- Abrir Unity ---------------------
-unityhub
+------ Copiar archivos desde ordenador al robot ------
+Conectado al wifi del robot (GL-AXT) y desde la terminal: 
+scp /home//ruta/archivo.py unitree@192.168.123.18:/home/unitree/ruta/archivo.py
 
 ------------ Ejecutar servidor para topics ------------
 ros2 run ros_tcp_endpoint default_server_endpoint --ros-args -p ROS_IP:=192.168.1.205
 
 ip -> hostname -I
-
------------ Comprimir imagenes de los topics ----------
-# Terminal 1
-ros2 run image_transport republish raw compressed --ros-args -r __ns:=/stereo_virtual/left -r input:=image_raw
-ros2 run virtual_stereo_cam image_compressor_left
-
-# Terminal 2
-ros2 run image_transport republish raw compressed --ros-args -r __ns:=/stereo_virtual/right -r input:=image_raw
-ros2 run virtual_stereo_cam image_compressor_right
-
-

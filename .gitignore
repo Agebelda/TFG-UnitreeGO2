@@ -1,25 +1,57 @@
+# =======================
 # Unity
+# =======================
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
-[Bb]uild/
-[Bb]uilds/
+[Bb]uild*/
 [Ll]ogs/
 UserSettings/
+MemoryCaptures/
+*.unityproj
+*.pidb
+*.sln
+*.user
+*.userprefs
+*.csproj
 .vscode/
 .DS_Store
+*.apk
 
-# Python
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.env
-*.venv
-
+# =======================
 # ROS 2
+# =======================
 build/
 install/
 log/
-unity-vr/
+
+# =======================
+# Python
+# =======================
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.pyc
+*.egg
+*.egg-info/
+.eggs/
+*.env
+*.venv
+*.log
+
+# =======================
+# Otros
+# =======================
+*.swp
+*.swo
+*.bak
+*~
+.env
+.idea/
+*.orig
+
+# =======================
+# Carpetas temporales personalizadas
+# =======================
 unity-vr/

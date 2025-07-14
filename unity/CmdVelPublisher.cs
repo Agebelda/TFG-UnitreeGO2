@@ -13,18 +13,18 @@ public class CmdVelPublisherVR : MonoBehaviour
     public float maxAngular = 1.2f;
 
     [Header("Input Actions")]
-    public InputActionProperty moveLinear;    // joystick izquierdo
-    public InputActionProperty rotateAngular; // joystick derecho
+    public InputActionProperty moveLinear;    // Joystick izquierdo
+    public InputActionProperty rotateAngular; // Joystick derecho
 
     [Header("Head rotation config")]
-    public float headYawSensitivity = 0.04f;   // sensibilidad del giro de cabeza
-    public float headYawThreshold = 0.1f;      // umbral mínimo de giro de cabeza (grados)
+    public float headYawSensitivity = 0.04f;   // Sensibilidad del giro de cabeza
+    public float headYawThreshold = 0.1f;      // Umbral mínimo de giro de cabeza (grados)
 
     private float previousYaw = 0.0f;
     private float timeSinceStart = 0f;
     private float delayBeforePublishing = 1.0f;
 
-    private float[] angularZBuffer = new float[8];  // buffer de persistencia
+    private float[] angularZBuffer = new float[8];  // Buffer de persistencia
     private int bufferIndex = 0;
     private bool wasMoving = false;
 
@@ -80,7 +80,7 @@ public class CmdVelPublisherVR : MonoBehaviour
         angularZBuffer[bufferIndex] = angularZ;
         bufferIndex = (bufferIndex + 1) % angularZBuffer.Length;
 
-        // Usar el valor más fuerte reciente
+        // Usar el mayor valor reciente
         float smoothedAngularZ = 0f;
         foreach (float val in angularZBuffer)
         {

@@ -12,7 +12,7 @@ public class CompressedImageSubscriberLeft : MonoBehaviour
 
     private ROSConnection ros;
 
-    // Cola de imágenes en bruto (byte[])
+    // Cola de imágenes en bruto
     private ConcurrentQueue<byte[]> imageDataQueue = new ConcurrentQueue<byte[]>();
 
     void Start()
@@ -46,12 +46,12 @@ public class CompressedImageSubscriberLeft : MonoBehaviour
 
     void ReceiveImage(CompressedImageMsg msg)
     {
-        // Decodificar en segundo plano (pero solo el buffer)
+        // Decodificar en segundo plano
         ThreadPool.QueueUserWorkItem(_ =>
         {
             try
             {
-                // Verificamos que no haya muchas imágenes acumuladas
+                // Verificar que no haya muchas imágenes acumuladas
                 if (imageDataQueue.Count < 2)
                 {
                     imageDataQueue.Enqueue(msg.data);

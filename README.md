@@ -4,52 +4,46 @@ Este repositorio contiene el desarrollo del Trabajo de Fin de Grado enfocado en 
 
 ---
 
-## 🧠 Descripción general
+## Descripción general
 
-El objetivo del proyecto es crear un entorno inmersivo de control remoto para el robot Unitree GO2, combinando:
+El objetivo del proyecto es crear un sistema de realidad virtual para el control inmersivo de un perro robótico, combinando:
 
-- **Visión estéreo en tiempo real** desde la cámara RealSense D435i.
-- **Renderizado en Unity** para mostrar la visión del robot en gafas de realidad virtual.
-- **Control remoto del robot** desde Unity a través de ROS 2 usando ROS-TCP-Connector.
-- **Transmisión de comandos básicos** (marcha, rotación, dirección) y posible integración de seguimiento con el movimiento de cabeza.
-
----
-
-## 🛠️ Tecnologías utilizadas
-
-- 🐧 **Ubuntu 22.04 + ROS 2 Humble**
-- 🤖 **Unitree GO2 con ROS 2 Foxy**
-- 🎮 **Unity + XR Toolkit + ROS-TCP-Connector**
-- 🎥 **Intel RealSense D435i**
-- 🧠 **Python + OpenCV + Open3D**
-- 🌐 **GitHub para código y Plastic SCM para el proyecto Unity**
+- **Visión estéreo en tiempo real** mediante una cámara Intel RealSense D435i.
+- **Renderizado en Unity** para visualizar la escena en unas gafas Meta Quest 2.
+- **Control remoto del robot** desde Unity a través de ROS 2 mediante el paquete ROS-TCP-Connector.
+- **Teleoperación mediante mandos VR** y sincronización con el movimiento de la cabeza del operador.
 
 ---
 
-## 🚀 Cómo ejecutar
+## Tecnologías utilizadas
 
-### 1. Nodos de visión en el robot:
-ros2 run virtual_stereo_cam stereo_disparity_publisher
-
-### 2. Nodo de compresión en PC:
-ros2 run virtual_stereo_cam image_compressor_left
-ros2 run virtual_stereo_cam image_compressor_right
-
-### 3. Servidor de comunicación con unity:
-ros2 run ros_tcp_endpoint default_server_endpoint
-
-### 4. Proyecto Unity:
-Abierto desde Unity Hub (unity-vr/).
-
-Conectado a ROS 2 Humble mediante ROSConnection.
-
-Publica comandos básicos de control.
+- **Ubuntu 22.04 + ROS 2 Humble**
+- **Unitree GO2 con ROS 2 Foxy**
+- **Unity + XR Toolkit + ROS-TCP-Connector**
+- **Intel RealSense D435i**
+- **Python + OpenCV + Open3D**
 
 ---
 
-## 🙋 Autor
-**Alejandro Gea Belda**
+## Cómo ejecutar
 
-Estudiante del **Grado en Ingeniería Robótica**
+### 1. En el robot:
+ros2 launch go2_vr robot.launch.py
 
-**Universidad de Alicante**
+### 2. En el pc:
+ros2 launch go2_vr pv-launch.py
+
+> Es necesario clonar el repositorio [`ROS-TCP-Endpoint`](https://github.com/Unity-Technologies/ROS-TCP-Endpoint) en la carpeta `src/` del workspace y compilarlo con `colcon build`.
+
+### 3. En las gafas Meta Quest 2:
+
+- Transfiere e instala el archivo `vr-viewer-builtin.apk`.
+- Ejecuta la aplicación desde las gafas.
+
+---
+
+## Autor
+
+**Alejandro Gea Belda**  
+Estudiante del Grado en Ingeniería Robótica  
+Universidad de Alicante
