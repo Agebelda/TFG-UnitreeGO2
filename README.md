@@ -1,4 +1,4 @@
-# TFG - Teleoperación en Realidad Virtual del Unitree GO2
+# TFG - Sistema de realidad virtual para el control inmersivo de un perro robótico
 
 Este repositorio contiene el desarrollo del Trabajo de Fin de Grado enfocado en la teleoperación del robot cuadrúpedo **Unitree GO2** mediante un sistema de realidad virtual, empleando ROS 2, Unity y visión estéreo con una cámara Intel RealSense.
 
