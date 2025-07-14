@@ -14,9 +14,9 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='Alejandro Gea',
+    maintainer='Alejandro Gea Belda',
     maintainer_email='alejandrogeabelda@gmail.com',
-    description='Sistema VR de teleoperación del Unitree GO2 con ROS 2 y Unity',
+    description='Sistema de realidad virtual para el control inmersivo de un perro robótico',
     license='GNU General Public License v3 (GPLv3)',
     tests_require=['pytest'],
     entry_points={
