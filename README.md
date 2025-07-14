@@ -1,6 +1,6 @@
 # TFG - Teleoperación en Realidad Virtual del Unitree GO2
 
-Este repositorio contiene el desarrollo del Trabajo de Fin de Grado enfocado en la teleoperación del robot cuadrúpedo **Unitree GO2** mediante un sistema de realidad virtual, empleando ROS 2, Unity y visión estéreo con cámaras Intel RealSense.
+Este repositorio contiene el desarrollo del Trabajo de Fin de Grado enfocado en la teleoperación del robot cuadrúpedo **Unitree GO2** mediante un sistema de realidad virtual, empleando ROS 2, Unity y visión estéreo con una cámara Intel RealSense.
 
 ---
 
@@ -21,17 +21,17 @@ El objetivo del proyecto es crear un sistema de realidad virtual para el control
 - **Unitree GO2 con ROS 2 Foxy**
 - **Unity + XR Toolkit + ROS-TCP-Connector**
 - **Intel RealSense D435i**
-- **Python + OpenCV + Open3D**
+- **Python** con **OpenCV** y bibliotecas de **ROS 2**
 
 ---
 
 ## Cómo ejecutar
 
-### 1. En el robot:
+### 1. En el robot Unitree Go2:
 ros2 launch go2_vr robot.launch.py
 
-### 2. En el pc:
-ros2 launch go2_vr pv-launch.py
+### 2. En el ordenador local:
+ros2 launch go2_vr pc.launch.py
 
 > Es necesario clonar el repositorio [`ROS-TCP-Endpoint`](https://github.com/Unity-Technologies/ROS-TCP-Endpoint) en la carpeta `src/` del workspace y compilarlo con `colcon build`.
 
