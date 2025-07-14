@@ -1,4 +1,4 @@
-# go2_vr - Sistema de realidad virtual para el control inmersivo de un perro robótico Unitree Go2
+# go2_vr
 
 Este paquete forma parte del Trabajo de Fin de Grado de Alejandro Gea Belda (Universidad de Alicante) y proporciona los nodos ROS 2 necesarios para habilitar la teleoperación inmersiva del robot cuadrúpedo Unitree GO2.
 
@@ -25,10 +25,10 @@ source install/setup.bash
 
 ## Lanzamiento de nodos
 
-### En el robot:
+### En el robot Unitree Go2:
 
 ros2 launch go2_vr robot.launch.py
 
-### En el PC:
+### En el ordenador local:
 
 ros2 launch go2_vr pc.launch.py
