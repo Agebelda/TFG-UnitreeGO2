@@ -17,7 +17,7 @@ setup(
     maintainer='Alejandro Gea',
     maintainer_email='alejandrogeabelda@gmail.com',
     description='Sistema VR de teleoperación del Unitree GO2 con ROS 2 y Unity',
-    license='Uso académico - Trabajo de Fin de Grado',
+    license='GNU General Public License v3 (GPLv3)',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [

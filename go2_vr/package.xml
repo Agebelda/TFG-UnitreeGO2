@@ -2,11 +2,21 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>go2_vr</name>
-  <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="alejandrogeabelda@gmail.com">agebelda</maintainer>
-  <license>Uso académico - Trabajo de Fin de Grado</license>
+  <version>1.0.0</version>
+  <description>Sistema de realidad virtual para el control inmersivo de un perro robótico</description>
+  <maintainer email="alejandrogeabelda@gmail.com">Alejandro Gea Belda</maintainer>
+  <license>GPLv3</license>
 
+  <!-- Dependencias necesarias para tiempo de ejecución -->
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>unitree_api</exec_depend>
+  <exec_depend>cv_bridge</exec_depend>
+  <exec_depend>opencv-python</exec_depend>
+  <exec_depend>pyrealsense2</exec_depend>
+
+  <!-- Dependencias necesarias para pruebas -->
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
